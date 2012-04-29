@@ -11,11 +11,7 @@ def get_rows(tree):
                       'tr[contains(@id,"MainContentArea")]')
 
 def parse_row(row):
-    """Parse an item 'row.'
-    
-    Parses a row, returning the sku and a dict representation of the item.
-
-    """
+    """Parse a row, returning the sku and a dict representation of the item."""
     sku = row.xpath('td[2]/span/text()')[0]
     item = {
         'name': row.xpath('td[1]/div[2]/a/text()')[0]\
