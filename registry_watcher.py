@@ -60,7 +60,7 @@ if __name__ == '__main__':
     url = ('http://www1.burlingtoncoatfactory.com/'
            'PurchaseRegistryItems.aspx?id=30413117')
 
-    for sku, i in run(url, 600):
-        print sku, i
-        os.popen('echo "someone just bought: %s. %s remaining." | '\
-                 'mailx 1234567890@vmobl.com' % (i['name'],i['remaining']))
+    for sku, item in run(url, 600):
+        print sku, item
+        os.popen('echo "someone just bought: %s. %s remaining." | mailx '
+                 '1234567890@vmobl.com' % (item['name'], item['remaining']))
