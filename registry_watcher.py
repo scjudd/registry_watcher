@@ -35,7 +35,6 @@ def run(url, delay=60):
         initial[sku] = item
 
     while True:
-        print 'looping..'
         time.sleep(delay)
         data = initial.copy()
         for sku, item in parse(url):
