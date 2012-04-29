@@ -2,9 +2,9 @@ import lxml.html
 import time
 
 def get_rows(tree):
-    """Yield all item 'rows' with some quantity remaining to be purchased.
+    """Return all item 'rows' with some quantity remaining to be purchased.
 
-    Prunes the tree, yielding only the bits with information we care about.
+    Prunes the tree, returning only the bits with information we care about.
 
     """
     return tree.xpath('//table[@class="registryViewTable"]/'
