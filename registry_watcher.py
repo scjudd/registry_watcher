@@ -37,8 +37,8 @@ def run(url, delay=60):
     while True:
         time.sleep(delay)
         data = initial.copy()
+        # check items that are still on the list
         for sku, item in parse(url):
-            # get items that are still on the list
             if item['remaining'] != data[sku]['remaining']:
                 yield sku, item
                 initial[sku]['remaining'] = item['remaining']
