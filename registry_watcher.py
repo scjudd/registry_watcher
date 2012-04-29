@@ -7,9 +7,8 @@ def get_rows(tree):
     Prunes the tree, yielding only the bits with information we care about.
 
     """
-    for row in tree.xpath('//table[@class="registryViewTable"]/tr'
-                          '[contains(@id,"MainContentArea")]'):
-        yield row
+    return tree.xpath('//table[@class="registryViewTable"]/'
+                      'tr[contains(@id,"MainContentArea")]')
 
 def parse_row(row):
     """Parse an item 'row.'
