@@ -24,8 +24,7 @@ def parse_row(row):
 def parse(url):
     """Yield all parsed items from the given url."""
     tree = lxml.html.parse(url)
-    for row in get_rows(tree):
-        yield parse_row(row)
+    return (parse_row(r) for r in get_rows(tree))
 
 def run(url, delay=60):
     """Continuously parse the given url, yielding items as they are bought."""
