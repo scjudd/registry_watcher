@@ -24,7 +24,7 @@ def parse_row(row):
     return sku, item
 
 def parse(url):
-    """Yield all parsed items from the given url."""
+    """Return all parsed items from the given url."""
     tree = lxml.html.parse(url)
     return (parse_row(r) for r in get_rows(tree))
 
